@@ -7,13 +7,18 @@ function AgeCalculator() {
     const [year, setYear] = useState(0);
 
     const handleMonth = (e) => {
-        console.log(e.target.value)
+        setMonth(e.target.value);
     }
     const handleDay = (e) => {
-        console.log(e.target.value)
+        setDay(e.target.value);
     }
     const handleYear = (e) => {
-        console.log(e.target.value)
+        setYear(e.target.value);
+    }
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
     }
 
   return (
@@ -30,7 +35,7 @@ function AgeCalculator() {
             <label htmlFor='year'>Year Born:</label>
             <input id='year' placeholder='yyyy' onChange={handleYear}></input>
             
-            <button type='submit'>Submit</button>
+            <button type='submit' onClick={handleSubmit}>Submit</button>
         </form>
     </div>
   )
