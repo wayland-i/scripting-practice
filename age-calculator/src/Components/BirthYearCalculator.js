@@ -3,7 +3,7 @@ import React from 'react'
 function BirthYearCalculator() {
   return (
     <div className='BirthYearCalculator'>
-        <h1>Birth Year Calculator</h1>
+        <h1>Birth Year <br /> Calculator</h1>
         <h3>When were you born?</h3>
         <form>
             <label htmlFor='currentAge'>Current Age:</label>
@@ -18,7 +18,7 @@ function BirthYearCalculator() {
                 <input name='thisYear' type='radio'></input>
             </span>
 
-            <button type='submit'>Submit</button>
+            <button type='submit' id='birthSubmit'>Submit</button>
         </form>
     </div>
   )

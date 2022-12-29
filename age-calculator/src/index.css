@@ -13,7 +13,7 @@
   text-align: center;
   box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.5);
   border-radius: 5px 20px 5px 20px;
-  margin-top: 1%;
+  margin-top: .5%;
 }
 
 .AgeCalculator > *{
@@ -52,4 +52,10 @@ h3 {
   text-align: center;
   box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.5);
   border-radius: 5px 20px 5px 20px;
+}
+
+.BirthYearCalculator > form > button {
+  margin: 0;
+  margin-bottom: 8%;
+  
 }
