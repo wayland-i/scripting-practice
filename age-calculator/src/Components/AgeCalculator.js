@@ -8,36 +8,38 @@ function AgeCalculator() {
         year: ""
     }) 
 
+    const [age, setAge] = useState();
+
     
     const handleAll = (e) => {
         const {name, value} = e.target;
         setAgeData({...AgeData, [name]: value});
     }
 
-    // const [month, setMonth] = useState(0);
-    // const [day, setDay] = useState(0);
-    // const [year, setYear] = useState(0);
+    const ageScript = () => {
+        const currentDate = new Date();
 
-    // const handleMonth = (e) => {
-    //     setMonth(e.target.value);
-    // }
-    // const handleDay = (e) => {
-    //     setDay(e.target.value);
-    // }
-    // const handleYear = (e) => {
-    //     setYear(e.target.value);
-    // }
+        const age = currentDate.getFullYear() - AgeData.year;
+
+        return age > 150 ? "what's your secret?" : age
+    }
+
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        
+        setAge(ageScript());
+        setAgeData({
+            month: "",
+            day: "",
+            year: ""
+        });
     }
 
   return (
     <div className='AgeCalculator'>
         <h1>Age <br/> Calculator</h1>
         <h3>How old are you?</h3>
-        <form>
+        <form onSubmit={handleSubmit}>
             <label htmlFor='month'>Month Born:</label>
             <input id='month' placeholder='mm' onChange={handleAll} name='month' value={AgeData.month}></input>
             
@@ -47,8 +49,9 @@ function AgeCalculator() {
             <label htmlFor='year'>Year Born:</label>
             <input id='year' placeholder='yyyy' onChange={handleAll} name='year' value={AgeData.year}></input>
             
-            <button type='submit' onClick={handleSubmit}>Submit</button>
+            <button type='submit'>Submit</button>
         </form>
+        {age === 0 ? null : <h2>{age}</h2>}
     </div>
   )
 }
