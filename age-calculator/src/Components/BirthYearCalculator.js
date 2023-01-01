@@ -29,6 +29,9 @@ function BirthYearCalculator() {
     } else {
       setAnswer(today.getFullYear() - birthYear.currentAge + 1);
     }
+    const radios = document.getElementsByClassName("radio")
+    radios[0].checked = false;
+    radios[1].checked = false;
     setBirthYear(initialState);
   }
 
@@ -44,10 +47,10 @@ function BirthYearCalculator() {
             <h3>Most recent birthday?</h3>
             <span>
                 <label htmlFor='lastYear'>Last Year:</label>
-                <input name='lastYear' type='radio' onChange={handleFormInput}></input>
+                <input className='radio' name='lastYear' type='radio' onChange={handleFormInput}></input>
 
                 <label htmlFor='thisYear'>This Year:</label>
-                <input name='thisYear' type='radio' onChange={handleFormInput}></input>
+                <input className='radio' name='thisYear' type='radio' onChange={handleFormInput}></input>
             </span>
 
             <button type='submit' id='birthSubmit'>Submit</button>
