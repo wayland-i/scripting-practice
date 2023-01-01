@@ -1,12 +1,15 @@
 import React, { useState } from 'react'
 
 function BirthYearCalculator() {
+  
+  const initialState = {
+      currentAge: "",
+      lastYear: "",
+      thisYear: ""
+  }
 
-  const [birthYear, setBirthYear] = useState({
-    currentAge: "",
-    lastYear: "",
-    thisYear: ""
-  })
+  const [birthYear, setBirthYear] = useState(initialState)
+
 
   const [answer, setAnswer] = useState();
 
@@ -26,6 +29,7 @@ function BirthYearCalculator() {
     } else {
       setAnswer(today.getFullYear() - birthYear.currentAge + 1);
     }
+    setBirthYear(initialState);
   }
 
   return (
