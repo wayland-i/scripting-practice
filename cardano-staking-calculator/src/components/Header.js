@@ -6,6 +6,9 @@ function Header() {
     <div className='Header'>
         <NavLink exact to='/'>
             home
+        </NavLink>
+        <NavLink to='/calculator'>
+          calculator
         </NavLink>  
         <NavLink to='/about'>
             about
