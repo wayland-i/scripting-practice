@@ -7,7 +7,10 @@ function App() {
 
   useEffect(() => {
     fetch('https://jsonplaceholder.typicode.com/todos/')
-      .then(response => response.json())
+      .then(response => {
+        console.log(response)
+        return response.json()
+      })
       .then(json => {
         const firstTen = json.slice(0, 10);
 
@@ -17,7 +20,7 @@ function App() {
 
   return (
     <ul>
-        {todos.map(todo => <li>{todo.title}</li>)}
+        {todos.map(todo => <pre>{JSON.stringify(todo)}</pre>)}
     </ul>
     
   );
